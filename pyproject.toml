@@ -1,14 +1,12 @@
 [tool.poetry]
 name = "csds413-term-project"
 version = "0.1.0"
-description = ""
-authors = ["Jacob Anderson <janderson011903@gmail.com>"]
+description = "CSDS 413 Term Project"
+authors = [
+    {name = "Jacob Anderson", email = "jma195@case.edu"},
+    {name = "Wiam Skakri", email = "wxs428@case.edu"}
+]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
