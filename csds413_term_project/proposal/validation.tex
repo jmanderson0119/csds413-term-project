@@ -1,0 +1,32 @@
+\section*{Validation}
+
+
+We intend to pursue a permutation testing framework using Mahalanobis distance as our test statistic. Each tweet $i$ is represented as this five-dimensional feature vector:
+
+$$ \mathbf{x}_i = [V_i, S_i, W_i, F_i, C_i ] $$
+
+For each group, mean feature vectors will be collected:
+
+$$ \bar{\mathbf{x}}_{\text{Human}} = \frac{1}{n_\text{human}} \sum_{i \in \text{Human}} \mathbf{x}_i $$
+
+$$ \bar{\mathbf{x}}_{\text{AI}} = \frac{1}{n_\text{AI}} \sum_{i \in \text{AI}} \mathbf{x}_i $$
+
+and a pooled covariance matrix will be collected as:
+
+$$
+\mathbf{S}_{\text{pooled}} = \frac{(n_H - 1)\mathbf{S}_H + (n_{AI} - 1)\mathbf{S}_{AI}}{n_H + n_{AI} - 2}
+$$
+
+where $\mathbf{S}_H$ and $\mathbf{S}_{AI}$ are the sample covariance matrices for each group.\\
+
+That being said, the test procedure will first compute mean feature vectors $ \bar{\mathbf{x}}_{\text{Human}} $ and $ \bar{\mathbf{x}}_{\text{AI}} $, compute the pooled covariance matrix $\mathbf{S}_{\text{pooled}}$, invert the covariance matrix to obtain $\mathbf{S}_{\text{pooled}}^{-1}$, and compute our test statistic for the observed data as:
+
+$$ D_{M,obs} = \sqrt{(\bar{\mathbf{x}}_\text{Human} - \bar{\mathbf{x}}_{AI})^T \mathbf{S}_{\text{pooled}}^{-1} (\bar{\mathbf{x}}_\text{Human} - \bar{\mathbf{x}}_{AI})} $$
+
+For $b = 1, 2, \ldots, 10,000$, we randomly shuffle the label column while keeping the feature vectors $\mathbf{x}_i$ fixed, computing new mean vectors $\bar{\mathbf{x}}_H^{(b)}$ and $\bar{\mathbf{x}}_{AI}^{(b)}$ for each permutation. Using the same covariance matrix $\mathbf{S}_{\text{pooled}}^{-1}$, we calculate the Mahalanobis distance $ D_{M, b} $ for each permutation, each representing a new possibility under $ H_0 $.\\
+
+A p-value will then be given for this collection of test statistics as:
+
+$$ p = \frac{\#\{D_{M,b} \geq D_{M,\text{obs}}\}}{10,000} $$
+
+Regarding visualization of the result, we will plot a histogram of the Mahalanobis distances across the permutations, with a marker at $ D_{M,\text{obs}} $ overlaying the distribution, representing the p-value visually by the distribution mass beyond the observed distance.

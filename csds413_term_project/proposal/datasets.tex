@@ -1,31 +1,25 @@
 \section*{Dataset(s)}
 
-The \href{https://www.kaggle.com/datasets/mtesconi/twitter-deep-fake-text}{TweepFake dataset} is a collection of approximately 25,000 tweets split 50/50 between human-written posts and AI-generated posts. The AI-generated posts were produced and published to Twitter using 23 bot accounts as part of a research initiative to aid in the exploration of deepfake detection systems for social media: \href{https://doi.org/10.1371/journal.pone.0251415}{https://doi.org/10.1371/journal.pone.0251415}\\
+% The \href{https://www.kaggle.com/datasets/mtesconi/twitter-deep-fake-text}{TweepFake dataset} is a collection
+% of approximately 25,000 tweets split 50/50 between human-written posts and AI-generated posts. The AI-generated posts were produced and published to Twitter using 23 bot accounts as part of a research initiative to aid in the exploration of deepfake detection 
+% systems for social media: \href{https://doi.org/10.1371/journal.pone.0251415}{https://doi.org/10.1371/journal.pone.0251415}\\
 
-Below are the five features we intend to extract from each tweet for the purpose of our analysis. The dataset prior to extracting these features is cleaned of any URLs, mentions, and hashtags, as from initial inspection, bot tweets don't appear to include these and inclusion may also throw off extraction:
 
-\subsection*{Vocabulary Richness ($ V $)}
-$ V $ measures the ratio of unique words in tweet $ i $ to the total number of words in tweet $ i $: 
+\textbf{Dataset:} \href{https://www.kaggle.com/datasets/mtesconi/twitter-deep-fake-text}{TweepFake} (Fagni et al., 2020). 
 
-$$ V_i = \frac{\text{total unique words in tweet i}}{\text{total words in tweet i}} $$ 
+\textbf{Source:} Kaggle. 
 
-\subsection*{Sentence Length ($ S $)}
-$ S $ is the average length of each sentence in a tweet, delimited by standard punctuation symbols as well as newline characters:
+\textbf{Represents:} Real tweets posted on Twitter, balanced between human-written and AI-generated content. 
 
-$$ S_i = \frac{\text{total words in tweet i}}{\text{total sentences in tweet i}} $$
+\textbf{Variables:} Tweet text, binary label (human/bot), generation method (Markov, RNN, LSTM, GPT-2). 
 
-\subsection*{Word Length ($W$)}
-$ W $ is the average length of each word in a tweet:
+\textbf{Size:} 25,572 tweets. 
 
-$$ W_i = \frac{1}{n_{\text{words}}} \sum_{j=1}^{n_{\text{words}}} \text{len}(\text{word}_j) $$
+\textbf{Samples:} 12,786 human, 12,786 bot-generated from 23 bot accounts imitating 17 humans.
 
-\subsection*{Function Word Frequency ($F$)}
+The AI-generated posts were produced and published to Twitter using 23 bot accounts as part of a research initiative to aid in the exploration of deepfake detection systems for social media: 
 
-$ F $ captures the ratio of function words in a tweet to total words in a tweet:
+\href{https://doi.org/10.1371/journal.pone.0251415}{https://doi.org/10.1371/journal.pone.0251415}
 
-$$ F_i = \frac{\text{total function words in tweet i}}{\text{total words in tweet i}} $$
+\vspace{0.5cm}
 
-\subsection*{Capitalization Abnormality ($C$)}
-$ C $ measures the ratio of words containing abnormal capitalization patterns:
-
-$$ C_i = \frac{\text{total words with non-standard capitalization in tweet i}}{\text{total words in tweet i}} $$
