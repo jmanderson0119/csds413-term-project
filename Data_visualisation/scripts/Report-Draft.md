@@ -37,23 +37,38 @@ The three visualizations we used as our baseline:
 
 - **SAT Score Comparison vs. Carnegie Classification**: Positions CWRU's academic standards (avg SAT ~1490) within the context of peer institutions, showing competitive student quality despite lower selectivity
 
-# Data Sources:
+# Data Sources
 
-These are our important data sources:
-- CWRU [Interactive Factbook](https://case.edu/ir/InteractiveFactBook)![Attachment.tiff](file:///Attachment.tiff) - this was our initial reference, where we noticed that only facts were presented, no reference or relevance provided
+We utilized multiple data sources to ensure comprehensive and accurate institutional comparisons:
 
-- IPEDS Compare Colleges Tool (IPEDS → peer benchmarking): https://nces.ed.gov/ipeds/institution-profile/201645#enrollment - this is where we collected most of our data from
+## Primary Data Source
 
-- https://datausa.io/profile/university/case-western-reserve-university - this is our actual visualisation reference
+**[Integrated Postsecondary Education Data System (IPEDS)](https://nces.ed.gov/ipeds/institution-profile/201645#enrollment)**
+Our main data collection source for institutional metrics. IPEDS is a comprehensive system of interrelated surveys conducted annually by the National Center for Education Statistics (NCES), part of the Institute for Education Sciences within the U.S. Department of Education. We collected acceptance rates, enrolled/accepted students, median SAT scores, cost of attendance, retention rates, student-to-faculty ratios, and research expenditure data from IPEDS.
 
-- Hidden Ivys link: https://www.rebellionresearch.com/hidden-ivies-2025-ranking-the-definitive-list-of-all-63-hidden-ivy-schools?utm_source=chatgpt.com - we used this link to find schools similar to Case Western, this is a list of 63 hidden Ivy schools by rebellion research.
+## Visualization Reference
 
-- NCES or College Scorecard datasets (acceptance rate, cost, ROI)
-    
-- Institutional Research Tableau Dashboards: https://public.tableau.com/app/profile/cwru.office.of.institutional.research/viz/RetentionandGraduationRates_16248979084830/RetentionandGraduationbyFallEnteringCohort
-- https://case.edu/admission/apply/admission-statistics
+**[DataUSA - CWRU Profile](https://datausa.io/profile/university/case-western-reserve-university)**
+Our primary visualization reference and baseline. DataUSA provided temporal trends (2012-2023) and established visualization patterns for acceptance rates, retention rates, and SAT scores that informed our comparative approach.
 
-- https://datausa.io/profile/university/case-western-reserve-university - This is where we got our baseline visualizations
+## Peer Institution Selection
+
+**[Hidden Ivies 2025 Ranking by Rebellion Research](https://www.rebellionresearch.com/hidden-ivies-2025-ranking-the-definitive-list-of-all-63-hidden-ivy-schools)**
+Used to identify the 63 Hidden Ivy schools and select 12 peer institutions with profiles similar to CWRU. This curated list ensured our comparison set consisted of research universities with comparable missions and student populations.
+
+## Supplementary References
+
+**[CWRU Interactive Factbook](https://case.edu/ir/InteractiveFactBook)**
+Initial reference for CWRU institutional data. This resource highlighted the limitation we sought to address: institutional facts presented without comparative context or peer benchmarking.
+
+**[CWRU Institutional Research Tableau Dashboards](https://public.tableau.com/app/profile/cwru.office.of.institutional.research/viz/RetentionandGraduationRates_16248979084830/RetentionandGraduationbyFallEnteringCohort)**
+Provided detailed retention and graduation rate visualizations for CWRU, offering insight into temporal trends and cohort analysis.
+
+**[CWRU Admission Statistics](https://case.edu/admission/apply/admission-statistics)**
+Official source for CWRU's admission data, including acceptance rates and enrolled student statistics.
+
+**NCES College Scorecard**
+Supplementary data source for acceptance rates, cost of attendance, and return-on-investment metrics to validate and cross-reference IPEDS data.
 
 # Data Collection and Dataset Preparation
 
@@ -138,11 +153,3 @@ These outliers were retained in the analysis rather than removed, as they provid
 
 
 
-
-
-# **Presentation Strategy:**
-
-1. **Acknowledge limitations upfront**: "This weighting emphasizes research opportunities"
-2. **Show sensitivity analysis**: Display how rankings change with different weights
-3. **Focus on value proposition**: CWRU as "best research value" not "best overall"
-4. **Use relative positioning**: "Top tier for research, mid-tier price"
