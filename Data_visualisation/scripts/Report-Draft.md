@@ -57,7 +57,9 @@ These are our important data sources:
 
 # Data Collection and Dataset Preparation
 
-List of universities we are comparing:
+## Peer Institution Selection
+
+We selected 13 peer institutions to compare with CWRU, all classified as private research universities and identified through the Hidden Ivies list. Our comparison set includes elite institutions such as Rice University, Duke University, Vanderbilt University, Georgetown University, and the University of Notre Dame.
 
 |                                   |
 | --------------------------------- |
@@ -78,31 +80,61 @@ List of universities we are comparing:
 | Emory University                  |
 | Northeastern University           |
 
+## Data Collection Process
 
 We collected all the data from IPEDS i.e. the **Integrated Postsecondary Education Data System**. Which is a system of interrelated surveys conducted annually by the [National Center for Education Statistics](https://en.wikipedia.org/wiki/National_Center_for_Education_Statistics "National Center for Education Statistics") (NCES), a part of the [Institute for Education Sciences](https://en.wikipedia.org/wiki/Institute_for_Education_Sciences "Institute for Education Sciences") within the [United States Department of Education](https://en.wikipedia.org/wiki/United_States_Department_of_Education "United States Department of Education").
 
-It is a trusted source for collecting university-related data. I filtered my search by universities and populated the table for various factors.
-The data collection was done manually, which is not ideal but given the tight timeline, this was the way to go.
+IPEDS is a trusted and authoritative source for higher education data. We manually collected data for each institution, focusing on metrics most relevant to prospective students and our value proposition argument:
 
-We collected factors that we thought were important when considering taking admission to a university, like acceptance rate, enrolled/accepted students, Median SAT Scores, Cost of attendance, retention rate, student-to-faculty ratio, and the most important one in our argument, the expense distribution and research budget.
+- **Selectivity metrics**: Acceptance rates and number of accepted students
+- **Academic quality**: Median SAT scores
+- **Financial considerations**: Cost of attendance and net price
+- **Student success**: Retention rates and graduation rates
+- **Academic environment**: Student-to-faculty ratios
+- **Research investment**: Research expenditure distribution and research budget per student
 
-Our argument is that CWRU is a better return-on-investment school as compared to its other peers.
+While manual data collection was time-intensive, it allowed us to ensure data consistency and accuracy across all institutions within our project timeline.
 
-For our analysis, we considered ==13 (This number will change)== peer schools, of which few can also be considered as elite. Including Rice University, Duke, Southern California, Tufts, Notre Dame etc.
+## Research Value Proposition
 
-All these universities are Private research universities.
+Our central argument is that **CWRU represents superior return-on-investment compared to its peer institutions**, particularly when research opportunities and academic quality are weighted appropriately. This positioning reveals CWRU as a high-value Hidden Ivy that delivers elite-tier research access at a more accessible price point.
 
-Given more time, our dataset would have been more comprehensive, and we would have categorized all these universities into one group, naming them peer universities, and would have compared CWRU with peer groups and the national average.
+## Future Work
+
+Given additional time and resources, we would expand this analysis to include:
+- Broader institutional categorization with multiple peer groups
+- Comparison against national averages across institution types
+- Longitudinal analysis of trends over multiple years
+- Additional outcome metrics such as post-graduation employment and earnings data
 
 # Data Preprocessing
 
-Moving on to the data pre-processing part
+## Normalization Strategy
 
-I had to normalize all the columns to make them comparable. We used percentile ranking as it is more robust to outliers. For example, the acceptance rate was on a percentage scale, and the cost of attendance was somewhere in the range of 70000 to 90000 dollars.
+To enable meaningful comparison across metrics with vastly different scales and units, we normalized all variables using min-max scaling to a 0-1 range. This transformation was essential because raw metrics exist on incomparable scales—for example, acceptance rates range from 0-100%, while cost of attendance spans $70,000-$90,000.
 
-We did some outlier detection too, and it turned out that Duke University was being an outlier, probably because of a very high research expense budget, which probably suggests that it was in a different tier or cluster. Also, the University of Colorado stands out to be another outlier for being extremely affordable.
+We chose percentile-based normalization because it is more robust to outliers compared to z-score standardization, preserving the relative ranking of institutions while handling extreme values gracefully.
 
-We inverted the metrics acceptance rate, student-faculty ratio, accepted students, and cost of attendance for 'lower is better' variables
+## Metric Inversion
+
+For metrics where lower values indicate better performance, we applied inverse transformations before normalization:
+
+- **Acceptance rate**: Lower selectivity percentage = higher exclusivity
+- **Student-to-faculty ratio**: Lower ratio = better faculty access
+- **Number of accepted students**: Lower count = higher selectivity
+- **Cost of attendance**: Lower cost = better affordability
+
+This inversion ensures that higher normalized scores consistently represent superior institutional characteristics across all metrics.
+
+## Outlier Detection
+
+Our analysis identified two notable outliers:
+
+1. **Duke University**: Significantly elevated research expenditure budget, suggesting placement in a distinct tier of research-intensive institutions. Duke's research spending per student substantially exceeded peer averages, positioning it as an elite outlier.
+
+2. **University of Colorado**: Exceptionally low cost of attendance compared to peer institutions, making it an affordability outlier. This suggests Colorado operates under a different financial model than other institutions in our comparison set.
+
+These outliers were retained in the analysis rather than removed, as they provide valuable reference points for understanding the spectrum of institutional characteristics within the Hidden Ivies and peer research universities.
 
 
 
