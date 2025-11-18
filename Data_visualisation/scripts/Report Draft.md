@@ -80,6 +80,31 @@ We utilized multiple data sources to ensure comprehensive and accurate instituti
 
 # Data Collection and Dataset Preparation
 
+<<<<<<< HEAD
+=======
+List of universities we are comparing:
+
+|                                   |
+| --------------------------------- |
+| Case Western Reserve University   |
+| Tufts University                  |
+| Vanderbilt University             |
+| Georgetown University             |
+| University of Notre Dame          |
+| University of Rochester           |
+| University of Southern California |
+| Fordham University                |
+| Rice University                   |
+| Duke University                   |
+| Syracuse University               |
+| Boston University                 |
+| University of Colorado            |
+| Georgetown University             |
+| Emory University                  |
+| Northeastern University           |
+
+
+>>>>>>> f1372c1d72bc12f9b6a02d0112a785d306e1d00d
 We collected all the data from IPEDS i.e. the **Integrated Postsecondary Education Data System**. Which is a system of interrelated surveys conducted annually by the [National Center for Education Statistics](https://en.wikipedia.org/wiki/National_Center_for_Education_Statistics "National Center for Education Statistics") (NCES), a part of the [Institute for Education Sciences](https://en.wikipedia.org/wiki/Institute_for_Education_Sciences "Institute for Education Sciences") within the [United States Department of Education](https://en.wikipedia.org/wiki/United_States_Department_of_Education "United States Department of Education").
 
 It is a trusted source for collecting university-related data. I filtered my search by universities and populated the table for various factors.
