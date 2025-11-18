@@ -12,71 +12,49 @@ We transform 9 key institutional metrics from absolute to relative measurements,
 
 ## Base Visualization Reference
 
-Our primary visual reference comes from [DataUSA's CWRU profile](https://datausa.io/profile/university/case-western-reserve-university). DataUSA provides comprehensive temporal data and trends for individual institutions, with three key visualization types that informed our approach:
+Our primary visual reference comes from [DataUSA's CWRU profile](https://datausa.io/profile/university/case-western-reserve-university). While DataUSA provides comprehensive temporal data and trends for individual institutions, their visualizations focus on single-institution analysis without peer comparison. They excel at showing:
 
-1. **Acceptance Rate by Research Activity (Doctoral Universities)**: A horizontal bar chart showing acceptance rates for doctoral universities, categorized by research activity level. CWRU appears as a highly research-active institution with approximately 28% acceptance rate.
+- **Temporal trends**: acceptance rates, retention rates, and SAT scores over time (2012-2023)
+- **Student demographics**: diversity metrics and enrollment patterns
+- **Financial data**: tuition costs and student debt over time
+- **Outcomes**: graduation rates and post-graduation earnings
 
-2. **Full-Time Retention Rate Trends**: A multi-line temporal chart tracking retention rates from 2012-2023 across multiple institutions. CWRU's red line shows consistent performance around 92% retention, compared to peer institutions ranging from 90-98%.
+However, DataUSA's approach has a critical limitation: **no comparative context**. You can see that CWRU has a certain acceptance rate or research expenditure, but you cannot easily assess whether these values are competitive, exceptional, or below par relative to peer institutions.
 
-3. **SAT Score Comparison vs. Carnegie Classification**: A scatter plot comparing critical reading and math scores across CWRU and Carnegie parent institutions, showing CWRU's average scores around 700-750 for both sections (approximately 1490 combined).
+Our visualizations build upon DataUSA's temporal foundation by adding three key enhancements:
 
-### What DataUSA Does Well
+1. **Peer Benchmarking**: Rather than showing CWRU in isolation, we compare it against 12 carefully selected peer institutions (Hidden Ivies and research universities with similar profiles)
 
-DataUSA excels at presenting:
-- **Temporal trends**: Multi-year patterns in acceptance rates, retention rates, and SAT scores (2012-2023)
-- **Single-institution focus**: Deep dive into one university's metrics over time
-- **Visual clarity**: Clean, readable charts with proper labeling and legends
-- **Categorical comparisons**: Grouping by Carnegie classification or research activity level
-
-### Critical Limitation: No Contextual Benchmarking
-
-However, DataUSA's approach has a significant limitation: **lack of strategic peer comparison and relative positioning**. While you can see that CWRU has a certain acceptance rate or research expenditure, you cannot easily assess:
-- Where CWRU ranks among carefully selected peer institutions
-- Whether these absolute values represent competitive advantages or disadvantages
-- How different institutional characteristics should be weighted based on strategic priorities
-- What CWRU's relative value proposition is compared to similar Hidden Ivies
-
-### Our Enhancements
-
-We build upon DataUSA's temporal foundation by adding three key analytical layers:
-
-1. **Strategic Peer Benchmarking**: Rather than showing CWRU alongside all doctoral universities or Carnegie classifications, we compare it against 12 carefully selected peer institutions (Hidden Ivies and research universities with similar profiles: Rice, Duke, Vanderbilt, Georgetown, Notre Dame, etc.)
-
-2. **Relative Normalization**: We transform absolute metrics into percentile-ranked scores (0-1 scale), making disparate metrics (like cost of attendance vs. research budget) directly comparable and revealing relative positioning
+2. **Relative Normalization**: We transform absolute metrics into percentile-ranked scores (0-1 scale), making disparate metrics (like cost of attendance vs. research budget) directly comparable
 
 3. **Research-Weighted Quality Score**: While DataUSA treats all metrics equally, we introduce strategic weighting (40% research, 30% academic quality, 20% affordability, 10% outcomes) to highlight CWRU's distinctive value proposition as a high-research-investment institution
 
-This approach shifts from "what are CWRU's numbers?" to "what is CWRU's competitive position and value story?"
+The three visualizations we used as our baseline:
 
-# Data Sources
+- **Acceptance Rate by Research Activity** (Doctoral Universities): Shows how CWRU's selectivity compares across the doctoral university landscape, revealing its position as a highly research-active institution with a surprisingly accessible acceptance rate
 
-We utilized multiple data sources to ensure comprehensive and accurate institutional comparisons:
+- **Full-Time Retention Rate Trends**: Demonstrates CWRU's consistently strong student retention (92%) compared to peer institutions over the 2012-2023 period, highlighting institutional stability
 
-## Primary Data Source
+- **SAT Score Comparison vs. Carnegie Classification**: Positions CWRU's academic standards (avg SAT ~1490) within the context of peer institutions, showing competitive student quality despite lower selectivity
 
-- **[IPEDS (Integrated Postsecondary Education Data System)](https://nces.ed.gov/ipeds/)** - Our main data collection source. IPEDS is a system of interrelated surveys conducted annually by the National Center for Education Statistics (NCES), part of the Institute for Education Sciences within the U.S. Department of Education. We collected institutional metrics including:
-  - Acceptance rates and enrolled/accepted students
-  - Median SAT scores
-  - Cost of attendance and net price
-  - Retention and graduation rates
-  - Student-to-faculty ratios
-  - Research expenditure distribution and budget
+# Data Sources:
 
-## Visualization Reference
+These are our important data sources:
+- CWRU [Interactive Factbook](https://case.edu/ir/InteractiveFactBook)![Attachment.tiff](file:///Attachment.tiff) - this was our initial reference, where we noticed that only facts were presented, no reference or relevance provided
 
-- **[DataUSA - CWRU Profile](https://datausa.io/profile/university/case-western-reserve-university)** - Our primary visualization reference, providing temporal trends and baseline visualizations for institutional metrics (2012-2023)
+- IPEDS Compare Colleges Tool (IPEDS → peer benchmarking): https://nces.ed.gov/ipeds/institution-profile/201645#enrollment
+- Integrated Postsecondary Education Data System - this is where we collected most of our data from
 
-## Peer Institution Selection
+- https://datausa.io/profile/university/case-western-reserve-university - this is our actual visualisation reference
 
-- **[Hidden Ivies 2025 Ranking by Rebellion Research](https://www.rebellionresearch.com/hidden-ivies-2025-ranking-the-definitive-list-of-all-63-hidden-ivy-schools)** - Used to identify the 63 Hidden Ivy schools and select 12 peer institutions similar to CWRU in profile and mission
+- Hidden Ivys link: https://www.rebellionresearch.com/hidden-ivies-2025-ranking-the-definitive-list-of-all-63-hidden-ivy-schools?utm_source=chatgpt.com - we used this link to find schools similar to Case Western, this is a list of 63 hidden Ivy schools by rebellion research.
 
-## Supplementary References
+- NCES or College Scorecard datasets (acceptance rate, cost, ROI)
+    
+- Institutional Research Tableau Dashboards: https://public.tableau.com/app/profile/cwru.office.of.institutional.research/viz/RetentionandGraduationRates_16248979084830/RetentionandGraduationbyFallEnteringCohort
+- https://case.edu/admission/apply/admission-statistics
 
-- **[CWRU Interactive Factbook](https://case.edu/ir/InteractiveFactBook)** - Initial reference showing institutional facts without comparative context
-- **[IPEDS Compare Colleges Tool](https://nces.ed.gov/ipeds/institution-profile/201645#enrollment)** - Peer benchmarking interface
-- **[CWRU Institutional Research Tableau Dashboards](https://public.tableau.com/app/profile/cwru.office.of.institutional.research/viz/RetentionandGraduationRates_16248979084830/RetentionandGraduationbyFallEnteringCohort)** - Retention and graduation rate visualizations
-- **[CWRU Admission Statistics](https://case.edu/admission/apply/admission-statistics)** - Official admission data
-- **NCES College Scorecard** - Additional data on acceptance rates, cost, and ROI
+- https://datausa.io/profile/university/case-western-reserve-university
 
 # Data Collection and Dataset Preparation
 
