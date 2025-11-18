@@ -174,3 +174,10 @@ CWRU offers elite-level access without elite-level barriers."
 2. **Show sensitivity analysis**: Display how rankings change with different weights
 3. **Focus on value proposition**: CWRU as "best research value" not "best overall"
 4. **Use relative positioning**: "Top tier for research, mid-tier price"
+
+
+
+-----
+
+
+
