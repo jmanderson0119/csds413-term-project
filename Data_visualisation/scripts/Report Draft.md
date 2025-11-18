@@ -58,7 +58,6 @@ List of universities we are comparing:
 | University of Colorado            |
 | Georgetown University             |
 | Emory University                  |
-| Georgia Institute of Technology   |
 | Northeastern University           |
 
 
