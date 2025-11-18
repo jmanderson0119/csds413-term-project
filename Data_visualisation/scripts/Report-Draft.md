@@ -42,8 +42,7 @@ The three visualizations we used as our baseline:
 These are our important data sources:
 - CWRU [Interactive Factbook](https://case.edu/ir/InteractiveFactBook)![Attachment.tiff](file:///Attachment.tiff) - this was our initial reference, where we noticed that only facts were presented, no reference or relevance provided
 
-- IPEDS Compare Colleges Tool (IPEDS → peer benchmarking): https://nces.ed.gov/ipeds/institution-profile/201645#enrollment
-- Integrated Postsecondary Education Data System - this is where we collected most of our data from
+- IPEDS Compare Colleges Tool (IPEDS → peer benchmarking): https://nces.ed.gov/ipeds/institution-profile/201645#enrollment - this is where we collected most of our data from
 
 - https://datausa.io/profile/university/case-western-reserve-university - this is our actual visualisation reference
 
@@ -54,12 +53,10 @@ These are our important data sources:
 - Institutional Research Tableau Dashboards: https://public.tableau.com/app/profile/cwru.office.of.institutional.research/viz/RetentionandGraduationRates_16248979084830/RetentionandGraduationbyFallEnteringCohort
 - https://case.edu/admission/apply/admission-statistics
 
-- https://datausa.io/profile/university/case-western-reserve-university
+- https://datausa.io/profile/university/case-western-reserve-university - This is where we got our baseline visualizations
 
 # Data Collection and Dataset Preparation
 
-<<<<<<< HEAD
-=======
 List of universities we are comparing:
 
 |                                   |
@@ -82,7 +79,6 @@ List of universities we are comparing:
 | Northeastern University           |
 
 
->>>>>>> f1372c1d72bc12f9b6a02d0112a785d306e1d00d
 We collected all the data from IPEDS i.e. the **Integrated Postsecondary Education Data System**. Which is a system of interrelated surveys conducted annually by the [National Center for Education Statistics](https://en.wikipedia.org/wiki/National_Center_for_Education_Statistics "National Center for Education Statistics") (NCES), a part of the [Institute for Education Sciences](https://en.wikipedia.org/wiki/Institute_for_Education_Sciences "Institute for Education Sciences") within the [United States Department of Education](https://en.wikipedia.org/wiki/United_States_Department_of_Education "United States Department of Education").
 
 It is a trusted source for collecting university-related data. I filtered my search by universities and populated the table for various factors.
