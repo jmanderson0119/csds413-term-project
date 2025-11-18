@@ -70,7 +70,7 @@ We collected factors that we thought were important when considering taking admi
 
 Our argument is that CWRU is a better return-on-investment school as compared to its other peers.
 
-For our analysis, we considered ==13 (This number will change)== peer schools, of which few can also be considered as elite. Including Rice University, Duke, Southern California, Tufts, Notre Dame etc.
+For our analysis, we considered 15 peer schools, of which few can also be considered as elite. Including Rice University, Duke, Southern California, Tufts, Notre Dame, Emory etc.
 
 All these universities are Private research universities.
 
@@ -80,14 +80,92 @@ Given more time, our dataset would have been more comprehensive, and we would ha
 
 Moving on to the data pre-processing part
 
-I had to normalize all the columns to make them comparable. We used percentile ranking as it is more robust to outliers. For example, the acceptance rate was on a percentage scale, and the cost of attendance was somewhere in the range of 70000 to 90000 dollars.
+I had to normalize all the columns to make them comparable. For example, the acceptance rate was on a percentage scale, and the cost of attendance was somewhere in the range of 70000 to 90000 dollars.
 
 We did some outlier detection too, and it turned out that Duke University was being an outlier, probably because of a very high research expense budget, which probably suggests that it was in a different tier or cluster. Also, the University of Colorado stands out to be another outlier for being extremely affordable.
 
 We inverted the metrics acceptance rate, student-faculty ratio, accepted students, and cost of attendance for 'lower is better' variables
 
+For handling outliers, we applied a log transformation to the research budget per student column.
+
+# Multiple quality indices
+
+Factors used in our analysis:
+
+Acceptance_Rate
+Accepted
+SAT_Scores
+Cost_of_Attendance
+Net_Price
+Retention_Rate
+Grad_Rate_4yr
+Grad_Rate_5yr
+Grad_Rate_6yr
+Expense_Distribution_Research
+Research_Budget_Per_Student
+Student_Faculty_Ratio
 
 
+
+# Conclusions in code
+
+  
+
+### Key Findings:
+
+1. **CWRU's Position Varies by Weighting**:
+
+- Equal weights: Rank 10-11/15
+
+- Research focus (40% research): Rank 4-5/15
+
+- Value focus: Rank 6-7/15
+
+  
+
+2. **Statistical Robustness**:
+
+- Percentile ranking handles outliers better than min-max
+
+- CWRU's research strength is consistent across methods
+
+- Bootstrap CI shows rank stability within 2-3 positions
+
+  
+
+3. **Value Proposition**:
+
+- CWRU is NOT cheaper than Duke/Rice
+
+- BUT offers similar research opportunities
+
+- Best narrative: "Research excellence at accessible price"
+
+  
+
+### Recommendations:
+
+1. **Use percentile ranking** for normalization
+
+2. **Justify research weighting** with outcome data if possible
+
+3. **Frame as "different excellence"** not "better overall"
+
+4. **Focus on specific strengths** rather than overall ranking
+
+5. **Show sensitivity analysis** for transparency
+
+  
+
+### Best Argument:
+
+"Among elite research universities, CWRU occupies a unique position -
+
+delivering 92nd percentile research investment with 40% emphasis on research opportunities.
+
+For students seeking undergraduate research opportunities,
+
+CWRU offers elite-level access without elite-level barriers."
 
 
 # **Presentation Strategy:**
