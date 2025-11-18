@@ -63,3 +63,14 @@ I had to normalize all the columns to make them comparable. We used percentile r
 We did some outlier detection too, and it turned out that Duke University was being an outlier, probably because of a very high research expense budget, which probably suggests that it was in a different tier or cluster. Also, the University of Colorado stands out to be another outlier for being extremely affordable.
 
 We inverted the metrics acceptance rate, student-faculty ratio, accepted students, and cost of attendance for 'lower is better' variables
+
+
+
+
+
+# **Presentation Strategy:**
+
+1. **Acknowledge limitations upfront**: "This weighting emphasizes research opportunities"
+2. **Show sensitivity analysis**: Display how rankings change with different weights
+3. **Focus on value proposition**: CWRU as "best research value" not "best overall"
+4. **Use relative positioning**: "Top tier for research, mid-tier price"
