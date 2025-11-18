@@ -100,7 +100,7 @@ Supplementary data source for acceptance rates, cost of attendance, and return-o
 
 ### 3.1 Peer Institution Selection
 
-We selected 13 peer institutions to compare with CWRU, all classified as private research universities and identified through the Hidden Ivies list. Our comparison set includes elite institutions such as Rice University, Duke University, Vanderbilt University, Georgetown University, and the University of Notre Dame.
+We selected 15 peer institutions to compare with CWRU, all classified as private research universities and identified through the Hidden Ivies list. Our comparison set includes elite institutions such as Rice University, Duke University, Vanderbilt University, Georgetown University, and the University of Notre Dame.
 
 **Final Dataset (15 institutions)**:
 - Case Western Reserve University
