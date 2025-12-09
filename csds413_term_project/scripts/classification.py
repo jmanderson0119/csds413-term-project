@@ -1,4 +1,5 @@
 """
+Author: Aishani Patil
 Bot Detection Classification with Permutation Testing
 
 Trains classifiers on stylometric features and validates using permutation tests.
