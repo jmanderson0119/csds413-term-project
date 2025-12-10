@@ -10,12 +10,17 @@ import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.neural_network import MLPClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from sklearn.metrics import precision_recall_fscore_support
 import matplotlib.pyplot as plt
 import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
 
 # Load data
 print("Loading data...")
@@ -48,7 +53,12 @@ classifiers = {
     'Logistic Regression': LogisticRegression(random_state=42, max_iter=1000),
     'SVM (Linear)': SVC(kernel='linear', random_state=42),
     'SVM (RBF)': SVC(kernel='rbf', random_state=42),
-    'Random Forest': RandomForestClassifier(n_estimators=100, random_state=42)
+    'Random Forest': RandomForestClassifier(n_estimators=100, random_state=42),
+    'Neural Network': MLPClassifier(hidden_layer_sizes=(100, 50), max_iter=1000, 
+                                   random_state=42, early_stopping=True),
+    'Gradient Boosting': GradientBoostingClassifier(n_estimators=100, random_state=42),
+    'Naive Bayes': GaussianNB(),
+    'K-Nearest Neighbors': KNeighborsClassifier(n_neighbors=5)
 }
 
 # Train and evaluate
@@ -172,8 +182,8 @@ plt.savefig('visuals/classification_results.png', dpi=300, bbox_inches='tight')
 print("\n✓ Visualization saved as 'classification_results.png'")
 plt.show()
 
-# Feature importance (if Random Forest)
-if 'Random Forest' in best_clf_name:
+# Feature importance (for tree-based models)
+if any(model_type in best_clf_name for model_type in ['Random Forest', 'Gradient Boosting']):
     importances = best_clf.feature_importances_
     feature_names = ['V', 'S', 'W', 'F', 'C']
     
@@ -182,6 +192,18 @@ if 'Random Forest' in best_clf_name:
     print("="*80)
     for feat, imp in zip(feature_names, importances):
         print(f"  {feat}: {imp:.4f}")
+        
+    # Plot feature importance
+    plt.figure(figsize=(8, 5))
+    plt.bar(feature_names, importances)
+    plt.title(f'Feature Importance - {best_clf_name}')
+    plt.xlabel('Features')
+    plt.ylabel('Importance')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig('visuals/feature_importance.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    print("✓ Feature importance plot saved as 'feature_importance.png'")
 
 # Save results
 results_df.to_csv('results/classification_results.csv', index=False)
