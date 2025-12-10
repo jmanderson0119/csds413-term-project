@@ -109,7 +109,8 @@ def contains_file_paths(text: str) -> bool:
     return False
 
 def main():
-    df = pd.read_csv('../data/tweepfake_raw.csv', sep=';')
+    df = pd.read_csv('../../data/tweepfake_raw.csv', sep=';')
+    df = df[(df['class_type'] == 'human') | (df['class_type'] == 'gpt2')]
     df['text'] = df['text'].apply(clean_tweet)
 
     # Removes any tweets rendered completely blank    
@@ -127,6 +128,6 @@ def main():
     df = df[['text', 'account.type']]
     df = df.rename(columns={'account.type': 'label'})
 
-    df.to_csv('../data/tweepfake.csv', sep=';', index=False)
+    df.to_csv('../../data/tweepfake.csv', sep=';', index=False)
 
 if __name__ == "__main__": main()

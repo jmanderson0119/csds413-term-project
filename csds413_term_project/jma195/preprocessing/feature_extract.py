@@ -109,8 +109,7 @@ def main():
     download_nltk_resources()
     stopwords_set = set(stopwords.words('english'))
     
-    output_path = '../data/tweepfake_features.csv'
-    df = pd.read_csv('../data/tweepfake.csv', sep=';')
+    df = pd.read_csv('../../data/tweepfake.csv', sep=';')
     
     # Performs feature extraction
     features_list = []
@@ -124,6 +123,6 @@ def main():
     features_df = pd.DataFrame(features_list)
     features_df = features_df[['text', 'label', 'V', 'S', 'W', 'F', 'C']]
 
-    features_df.to_csv(output_path, sep=';', index=False)
+    features_df.to_csv('../../data/tweepfake_features.csv', sep=';', index=False)
     
 if __name__ == "__main__": main()
