@@ -14,3 +14,9 @@ __pycache__/
 
 # Datasets
 data/
+my_env/
+env/
+venv/
+
+QUICK_SUMMARY.md
+ANALYSIS_VERIFICATION.md
