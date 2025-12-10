@@ -27,8 +27,7 @@ def compute_pooled_covariance(data_human: np.ndarray,
     cov_human = np.cov(data_human, rowvar=False)
     cov_bot = np.cov(data_bot, rowvar=False)
     
-    pooled_cov = ((n_human - 1) * cov_human + (n_bot - 1) * cov_bot) / \
-                 (n_human + n_bot - 2)
+    pooled_cov = ((n_human - 1) * cov_human + (n_bot - 1) * cov_bot) / (n_human + n_bot - 2)
     
     return pooled_cov
 

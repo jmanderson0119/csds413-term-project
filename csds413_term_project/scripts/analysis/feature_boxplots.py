@@ -26,8 +26,8 @@ def main():
     
     colors = {'Human': 'steelblue', 'Bot': 'coral'}
     
-    for idx, (feature, feature_name) in enumerate(features.items()):
-        ax = axes[idx]
+    for i, (feature, feature_name) in enumerate(features.items()):
+        ax = axes[i]
         
         data = df[[feature, 'label']].copy()
         data['label'] = data['label'].str.capitalize()
